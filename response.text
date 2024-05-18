@@ -1,0 +1,109 @@
+How to test at postman
+
+run app.py file then check via postman tool
+
+1:- http://127.0.0.1:5000
+
+method : GET 
+
+request paramater for body  : Not required 
+
+response :- 
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+</head>
+
+<body>
+    <h1>Hello, World!</h1>
+</body>
+
+</html>
+
+
+
+
+2:- http://127.0.0.1:5000/api/items
+
+method : GET 
+
+request paramater for body  : Not required 
+
+response :- 
+
+[
+    {
+        "description": "This is item 1",
+        "id": 1,
+        "name": "Item 1"
+    },
+    {
+        "description": "This is item 2",
+        "id": 2,
+        "name": "Item 2"
+    },
+    {
+        "description": "This is item 3",
+        "id": 3,
+        "name": "Item 3"
+    }
+]
+
+
+
+
+3:- http://127.0.0.1:5000/api/items/1
+
+method : GET 
+
+request paramater for body  : Not required 
+
+response :- 
+
+
+{
+    "description": "This is item 1",
+    "id": 1,
+    "name": "Item 1"
+}
+
+
+
+
+5:- http://127.0.0.1:5000/api/items
+
+method : GET 
+
+request paramater for body : required
+
+{"name": "New Item", "description": "This is a new item"}
+
+
+response :- 
+
+{
+    "description": "This is a new item",
+    "id": 4,
+    "name": "New Item"
+}
+
+
+=================================================================================
+using CURL URL 
+
+1:- curl --location 'http://127.0.0.1:5000'
+
+2:- curl --location 'http://127.0.0.1:5000/api/items'
+
+3:- curl --location 'http://127.0.0.1:5000/api/items/1'
+
+4:- curl --location 'http://127.0.0.1:5000/api/items' \
+--header 'Content-Type: application/json' \
+--data '{"name": "New Item", "description": "This is a new item"}'
+
+
